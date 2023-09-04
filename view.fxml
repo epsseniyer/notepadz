@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.*?>
+<VBox fx:id="mainman" style="-fx-control-inner-background: #fefefe;" alignment="CENTER" xmlns:fx="http://javafx.com/fxml" fx:controller="dev.vox.notebook.controller">
+    <padding>
+        <Insets top="0.0" right="0.0" bottom="0.0" left="0.0"/>
+    </padding>
+
+    <MenuBar>
+        <menus>
+            <Menu text="Dosya">
+                <items>
+                    <MenuItem text="Yeni (Ctrl+N)" onAction="#newFile"/>
+                    <MenuItem text="Aç (Ctrl+O)" onAction="#openFile"/>
+                    <MenuItem text="Kaydet (Ctrl+S)" onAction="#saveFile"/>
+                    <SeparatorMenuItem/>
+                    <MenuItem text="Çıkış  (Alt+F4)" onAction="#exitApp"/>
+                </items>
+            </Menu>
+            <Menu text="Görünüm">
+                <items>
+                    <MenuItem text="Yakınlaştır (Ctrl+Artı)" onAction="#zoomIn"/>
+                    <MenuItem text="Uzaklaştır (Ctrl+Eksi)" onAction="#zoomOut"/>
+                    <SeparatorMenuItem/>
+                    <Menu text="Stil">
+                        <items>
+                            <CheckMenuItem text="Açık Mod" fx:id="light" onAction="#lighter"/>
+                            <CheckMenuItem text="Karanlık Mod" fx:id="dark" onAction="#darker"/>
+                        </items>
+                    </Menu>
+                </items>
+            </Menu>
+        </menus>
+    </MenuBar>
+    <Separator />
+
+    <TextArea fx:id="textArea" VBox.vgrow="ALWAYS" style="-fx-control-inner-background: #fefefe; -fx-border-width: 0; -fx-background-color: transparent; -fx-font-size: 16px;">
+        <VBox.margin>
+            <Insets top="-3" right="-2.0" bottom="-2.0" left="-2.0" />
+        </VBox.margin>
+    </TextArea>
+</VBox>
